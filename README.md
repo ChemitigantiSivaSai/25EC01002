@@ -15,3 +15,5 @@ scipy version: 1.18.0
 * 69704c1 (HEAD -> master) Refine EDA environment status message
 * ecd6e8d Update EDA setup confirmation message
 * 80bd28f Add EDA setup files and gitignore
+
+## E3 Branching Completed
