@@ -3,7 +3,7 @@ import pandas
 import matplotlib
 import scipy
 
-print("EDA Setup Completed Successful")
+print("EDA Tools Environment Ready")
 
 print("numpy version:", numpy.__version__)
 print("pandas version:", pandas.__version__)
