@@ -364,7 +364,7 @@ Size: 2800 × 1750 pixels
 Resolution: 350 dpi
 ```
 
-## E12: MOSFET ID-VDS Using Equations
+## E12: MOSFET ID-VDS Characteristics
 
 An n-channel silicon MOSFET was analyzed using the following parameters:
 
