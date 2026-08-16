@@ -463,6 +463,33 @@ Image properties:
 Size: 2800 × 2100 pixels
 Resolution: 350 dpi
 ```
+## Bonus Exercise: Shockley Diode Analysis
+
+Generated synthetic diode data using the Shockley diode equation in Python with NumPy.
+
+The parameters used were:
+
+```text
+IS = 1 × 10^-12 A
+VT = 0.02585 V
+VD = 0 V to 0.8 V
+VD step = 0.01 V
+Ideality factors: n = 1.0, 1.5, 2.0
+```
+
+Python script:
+
+`diode_iv.py`
+
+Output graphs:
+
+```text
+Bonus_Diode_IV.png
+Bonus_Diode_IV_Log.png
+Bonus_Diode_Conductance.png
+```
+
+The logarithmic plot reveals the wide range of diode currents and the low-current behavior that is compressed or hidden on the linear-scale plot.
 
 ## Repository File Structure
 
@@ -506,7 +533,12 @@ Resolution: 350 dpi
 ├── E12_Level3.png
 ├── E12_Level3_VGS1.csv
 ├── E12_Level3_VGS2.csv
-└── E12_Level3_VGS3.csv
+├── E12_Level3_VGS3.csv
+│
+├── diode_iv.py
+├── Bonus_Diode_IV.png
+├── Bonus_Diode_IV_Log.png
+└── Bonus_Diode_Conductance.png
 ```
 
 ## .gitignore
