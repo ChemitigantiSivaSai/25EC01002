@@ -88,10 +88,18 @@ for n in ideality_factors:
     gd = conductances[n]
     positive = gd > 0
 
-    plt.semilogy(
+    (line,) = plt.semilogy(
         VD[positive],
         gd[positive],
-        label=rf"$n = {n}$"
+        label=rf"$n = {n}$ (np.gradient)"
+    )
+    # exact derivative of the Shockley equation, for comparison
+    plt.semilogy(
+        VD,
+        (IS * (np.exp(VD / (n * VT)) - 1) + IS) / (n * VT),
+        linestyle="--",
+        color=line.get_color(),
+        label=rf"$n = {n}$ (analytic)"
     )
 
 plt.xlabel(r"$V_D$ (V)")
