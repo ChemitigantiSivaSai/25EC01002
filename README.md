@@ -18,7 +18,7 @@ python E10_threshold.py
 python E11_diode_characteristics.py
 python E12_Level1.py
 python E12_Level3.py
-python Bonus_diode_iv.py
+python diode_iv.py
 ```
 
 Each script reads its input file from the same folder and saves its figure(s) next to it.
@@ -51,7 +51,7 @@ __pycache__/
 .venv/
 ```
 
-Git log (`git log --oneline --graph --decorate --all`):
+Git log (`git log --oneline --graph --decorate --all`), snapshot taken at commit `a88b723` (later commits are not listed here):
 
 ```
 * bd2bdd5 (HEAD -> main, origin/main, origin/HEAD) Ignore Python cache and virtual environment
@@ -97,10 +97,10 @@ Git log (`git log --oneline --graph --decorate --all`):
 
 ## E3: Branching
 
-- Created branch `branch_check`
-- Added roll number print statement in `E1_check_setup.py`
-- Committed the change on the branch
-- Merged the branch into `main` with a merge commit; the divergence and merge are visible in Git Graph
+- Created branch `branch_check` from `main`.
+- The roll-number print line in `E1_check_setup.py` had already been added on `main` earlier (commit `15f3bc9`), so the change committed on `branch_check` (commit `e6eace3`) is only a one-line comment (`# branch_check demo`) at the top of that file.
+- Meanwhile `main` received further commits, so the two branches diverged.
+- Merged `branch_check` into `main` with a merge commit (`81c4a3c`); the divergence and merge are visible in Git Graph.
 
 ## E4: Conflict Resolution
 
@@ -110,6 +110,19 @@ Git log (`git log --oneline --graph --decorate --all`):
 Explanation (two sentences):
 
 The conflict was on the `## Branch Demo Commit` heading: `main` had that heading plus a new `## Master Branch Update` section, while `branch_demo` only had the heading. I kept the `main` (HEAD) version because it already contained the branch's line and also the extra update, so no change from either side was lost.
+
+### E4 (second attempt): conflict on an axis-label line
+
+To follow the exercise exactly, a second conflict was created on the same `plt.ylabel(...)` line of `E7_output_characteristics.py` on two branches, `conflict_a` and `conflict_b`, both created from the same commit of `main`.
+
+- `conflict_a`: `plt.ylabel('Drain Current $I_D$ (mA)')`
+- `conflict_b`: `plt.ylabel('$I_D$ (mA)')`
+
+Merging `conflict_b` after `conflict_a` stopped with a conflict; the markers were removed **before** committing the merge (merge commit `<fill in: git log --oneline -1>`).
+
+Explanation (two sentences):
+
+I kept the `conflict_a` version, `Drain Current $I_D$ (mA)`, because it is the more descriptive label and still contains the mathematical symbol that the `conflict_b` version used. Keeping one complete line also meant no leftover text from the other side, so the file runs without edits.
 
 ## E5: GitHub Round Trip
 
@@ -258,16 +271,16 @@ Input data: `E9_mosfet_transfer.csv`
 
 Output graph: `E9_gm_vgs.png`
 
-Peak transconductance results:
+Peak transconductance results (first point within 0.1 % of the maximum is reported):
 
 ```
 V_DS = 0.1 V
 Peak gm = 0.380 mS
-V_GS at peak gm = 5.000 V
+V_GS at peak gm = 2.000 V
 
 V_DS = 1.0 V
 Peak gm = 3.800 mS
-V_GS at peak gm = 3.500 V
+V_GS at peak gm = 3.000 V
 
 V_DS = 3.0 V
 Peak gm = 11.400 mS
@@ -286,7 +299,7 @@ V_DS = 5.0 V
 V_GS = 5.0 V
 ```
 
-Note: for V_DS = 3 V and 5 V, g_m keeps increasing with V_GS (the device is in saturation, where I_D is quadratic), so the maximum lies at the end of the sweep (V_GS = 5 V) and is not a true peak. For V_DS = 0.1 V and 1.0 V the device is in the linear region, where g_m is constant (0.38 mS and 3.8 mS) over the strong-inversion range. There is a plateau instead of a peak, and the reported V_GS is just the first point of that plateau.
+Note: for V_DS = 0.1 V and 1.0 V the device is in the linear region, where g_m is constant (0.38 mS and 3.8 mS) once strong inversion is reached, so there is a plateau instead of a peak; the reported V_GS is the first point of that plateau. For V_DS = 3 V and 5 V, g_m keeps increasing with V_GS (I_D is quadratic in saturation), so the maximum lies at the end of the sweep (V_GS = 5 V) and is not a true peak.
 
 Image properties:
 
@@ -519,7 +532,7 @@ VD step = 0.01 V
 Ideality factors: n = 1.0, 1.5, 2.0
 ```
 
-Python script: `Bonus_diode_iv.py`
+Python script: `diode_iv.py`
 
 Output graphs:
 
@@ -529,7 +542,9 @@ Bonus_Diode_IV_Log.png
 Bonus_Diode_Conductance.png
 ```
 
-The logarithmic plot reveals the wide range of diode currents and the low-current behavior that is compressed or hidden on the linear-scale plot.
+Why the log plot is useful (one sentence): on a log axis each curve becomes a straight line with slope 1/(n V_T ln 10), so the exponential behaviour over many decades of current, and the value of n, can be read directly, whereas on the linear plot every curve looks flat near zero and then shoots up.
+
+The conductance g_d = dI_D/dV_D was computed with `np.gradient(ID, VD)` and compared with the exact derivative (I_D + I_S)/(n V_T) (dashed lines in `Bonus_Diode_Conductance.png`). They agree to within about 2.5 % at interior points; the two end points are less accurate (up to about 20 %) because `np.gradient` uses a one-sided difference there.
 
 ## Repository File Structure
 
@@ -575,7 +590,7 @@ The logarithmic plot reveals the wide range of diode currents and the low-curren
 |-- E12_Level3_VGS2.csv
 |-- E12_Level3_VGS3.csv
 |
-|-- Bonus_diode_iv.py
+|-- diode_iv.py
 |-- Bonus_Diode_IV.png
 |-- Bonus_Diode_IV_Log.png
 |-- Bonus_Diode_Conductance.png
