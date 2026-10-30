@@ -47,6 +47,8 @@ The `.gitignore` file contains:
 ```
 *.log
 *.out
+__pycache__/
+.venv/
 ```
 
 Git log (`git log --oneline --graph --decorate --all`):
