@@ -19,7 +19,7 @@ for v_gs, group in df.groupby('V_GS (V)'):
 
 plt.title('MOSFET Output Characteristics ($I_D$ vs $V_{DS}$)')
 plt.xlabel('Drain-to-Source Voltage, $V_{DS}$ (V)')
-plt.ylabel('Drain Current, $I_D$ (mA)')
+plt.ylabel('Drain Current $I_D$ (mA)')
 plt.legend(title='Gate-Source Voltage')
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.tight_layout()
