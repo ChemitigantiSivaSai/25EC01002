@@ -54,28 +54,38 @@ __pycache__/
 Git log (`git log --oneline --graph --decorate --all`):
 
 ```
-* 91f3f94 (HEAD -> main, origin/main, origin/HEAD) Add Bonus Shockley diode analysis
-* 655038a Clarify E12 README heading
-* c451254 Update README with E1-E12 results
-* b673a91 Complete E12 Level 3 MOSFET simulation
-* 16afaf5 Complete E12 Level 1 MOSFET simulation
-* 70f6ff9 Complete E11 diode characteristics
-* 676f683 Complete E10 threshold voltage extraction
-* eb48bf2 Complete E9 MOSFET transconductance
-* 7113415 Complete E8 output conductance
-* fc16d9b Complete E7 MOSFET output characteristics
-* 03a6211 Complete E6 MOSFET data reading
-* 4346f89 Complete E1 setup verification
-* 55e08a9 Document GitHub round trip commit
-* 0dbca99 Add date of birth information
-*   61ed12c Resolve README merge conflict
+*   81c4a3c (HEAD -> main) Merge branch_check into main; keep both lines
 |\  
-| * 39812e6 (branch_demo) Add branch demonstration note
-* | 7e46af8 Add master branch update
-* | e4eaf7c Add branch demonstration note
+| * e6eace3 (branch_check) Add comment on branch_check
+* | 7edecb2 Add small README comment on main
+* | 74dbc73 Update README: list all .gitignore entries
+* | e9e04df Update README: corrected results, E12 parameters, run instructions
+* | ddf6c57 Report final V_T from linear-region fits in E10
+* | 14e8dcc Plot g_d vs V_DS for all V_GS in E8 script
+* | d775ca0 Rename bonus script to match naming pattern
+* | 91f3f94 (origin/main, origin/HEAD) Add Bonus Shockley diode analysis
+* | 655038a Clarify E12 README heading
+* | c451254 Update README with E1-E12 results
+* | b673a91 Complete E12 Level 3 MOSFET simulation
+* | 16afaf5 Complete E12 Level 1 MOSFET simulation
+* | 70f6ff9 Complete E11 diode characteristics
+* | 676f683 Complete E10 threshold voltage extraction
+* | eb48bf2 Complete E9 MOSFET transconductance
+* | 7113415 Complete E8 output conductance
+* | fc16d9b Complete E7 MOSFET output characteristics
+* | 03a6211 Complete E6 MOSFET data reading
+* | 4346f89 Complete E1 setup verification
+* | 55e08a9 Document GitHub round trip commit
+* | 0dbca99 Add date of birth information
+* |   61ed12c Resolve README merge conflict
+|\ \  
+| * | 39812e6 (branch_demo) Add branch demonstration note
+* | | 7e46af8 Add master branch update
+* | | e4eaf7c Add branch demonstration note
+|/ /  
+* / 6558cc0 Update README for branching exercise
 |/  
-* 6558cc0 Update README for branching exercise
-* 15f3bc9 (branch_check) Add roll number information
+* 15f3bc9 Add roll number information
 * 1f54d33 Add git history details to README
 * 69704c1 Refine EDA environment status message
 * ecd6e8d Update EDA setup confirmation message
