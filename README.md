@@ -54,7 +54,8 @@ __pycache__/
 Git log (`git log --oneline --graph --decorate --all`):
 
 ```
-*   81c4a3c (HEAD -> main) Merge branch_check into main; keep both lines
+* 4d01c8e (HEAD -> main, origin/main, origin/HEAD) Refresh git log in README
+*   81c4a3c Merge branch_check into main; keep both lines
 |\  
 | * e6eace3 (branch_check) Add comment on branch_check
 * | 7edecb2 Add small README comment on main
@@ -63,7 +64,7 @@ Git log (`git log --oneline --graph --decorate --all`):
 * | ddf6c57 Report final V_T from linear-region fits in E10
 * | 14e8dcc Plot g_d vs V_DS for all V_GS in E8 script
 * | d775ca0 Rename bonus script to match naming pattern
-* | 91f3f94 (origin/main, origin/HEAD) Add Bonus Shockley diode analysis
+* | 91f3f94 Add Bonus Shockley diode analysis
 * | 655038a Clarify E12 README heading
 * | c451254 Update README with E1-E12 results
 * | b673a91 Complete E12 Level 3 MOSFET simulation
@@ -97,8 +98,7 @@ Git log (`git log --oneline --graph --decorate --all`):
 - Created branch `branch_check`
 - Added roll number print statement in `E1_check_setup.py`
 - Committed the change on the branch
-- Merged the branch into `main` (a fast-forward merge, so the history stays linear)
-- The divergence-and-merge graph is shown in E4 (`branch_demo` branch, merge commit `61ed12c`)
+- Merged the branch into `main` with a merge commit; the divergence and merge are visible in Git Graph
 
 ## E4: Conflict Resolution
 
