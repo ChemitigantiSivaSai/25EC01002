@@ -54,7 +54,9 @@ __pycache__/
 Git log (`git log --oneline --graph --decorate --all`):
 
 ```
-* 4d01c8e (HEAD -> main, origin/main, origin/HEAD) Refresh git log in README
+* bd2bdd5 (HEAD -> main, origin/main, origin/HEAD) Ignore Python cache and virtual environment
+* 521c2e9 Update E3 notes and git log in README
+* 4d01c8e Refresh git log in README
 *   81c4a3c Merge branch_check into main; keep both lines
 |\  
 | * e6eace3 (branch_check) Add comment on branch_check
