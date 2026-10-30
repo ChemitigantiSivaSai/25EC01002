@@ -118,7 +118,7 @@ To follow the exercise exactly, a second conflict was created on the same `plt.y
 - `conflict_a`: `plt.ylabel('Drain Current $I_D$ (mA)')`
 - `conflict_b`: `plt.ylabel('$I_D$ (mA)')`
 
-Merging `conflict_b` after `conflict_a` stopped with a conflict; the markers were removed **before** committing the merge (merge commit `<fill in: git log --oneline -1>`).
+Merging `conflict_b` after `conflict_a` stopped with a conflict; the markers were removed **before** committing the merge (merge commit `81f6481`).
 
 Explanation (two sentences):
 
